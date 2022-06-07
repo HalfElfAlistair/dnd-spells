@@ -1,11 +1,15 @@
+<script>
+  export let spell = { name: "Spell Name", level: "Level", class: "Class" };
+</script>
+
 <li>
   <div class="spell-name-area">
-    <h2>Spell Name</h2>
+    <h2>{spell.name}</h2>
   </div>
-  <div class="level-class-area">
-    <p>Level</p>
-    <p>Class</p>
-  </div>
+  <!-- <div class="level-class-area">
+    <p>Level: {spell.level}</p>
+    <p>Class: {spell.class}</p>
+  </div> -->
 </li>
 
 <style>
@@ -20,10 +24,10 @@
     margin: 5px;
   }
 
-  .level-class-area {
+  /* .level-class-area {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 30%;
-  }
+    gap: 25%;
+  } */
 </style>
