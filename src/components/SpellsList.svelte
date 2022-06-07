@@ -1,13 +1,16 @@
 <script>
   import SpellCard from "./SpellCard.svelte";
+  import { getSpells } from "../utils/api";
 </script>
 
 <main>
-  <ul>
-    <SpellCard />
-    <SpellCard />
-    <SpellCard />
-  </ul>
+  {#await getSpells() then data}
+    <ul>
+      {#each data as spell}
+        <SpellCard {spell} />
+      {/each}
+    </ul>
+  {/await}
 </main>
 
 <style>
