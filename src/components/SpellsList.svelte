@@ -1,10 +1,11 @@
 <script>
   import SpellCard from "./SpellCard.svelte";
   import { getSpells } from "../utils/api";
+  import { levelsQueryString } from "../store-files/querys";
 </script>
 
 <main>
-  {#await getSpells() then data}
+  {#await getSpells($levelsQueryString) then data}
     <ul>
       {#each data as spell}
         <SpellCard {spell} />
