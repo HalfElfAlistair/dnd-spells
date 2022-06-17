@@ -1,14 +1,22 @@
 <script>
   import Header from "./components/Header.svelte";
-  import FilterSection from "./components/FilterSection.svelte";
-  import SpellsList from "./components/SpellsList.svelte";
+  import AllSpells from "./components/AllSpells.svelte";
+  import ClassSpells from "./components/ClassSpells.svelte";
   import Nav from "./components/Nav.svelte";
+  import { Router, Route } from "svelte-navigator";
 </script>
 
-<Header />
-<FilterSection />
-<SpellsList />
-<Nav />
+<Router>
+  <Route path="/">
+    <Header />
+    <AllSpells />
+  </Route>
+  <Route path="/class">
+    <Header />
+    <ClassSpells />
+  </Route>
+  <Nav />
+</Router>
 
 <style>
   :global(body) {
