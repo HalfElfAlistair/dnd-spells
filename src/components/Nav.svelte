@@ -1,6 +1,10 @@
+<script>
+  import { Link } from "svelte-navigator";
+</script>
+
 <nav>
-  <a href="../App">All Spells</a>
-  <a>By Class</a>
+  <Link class="navlink" to="/">All Spells</Link>
+  <Link class="navlink" to="/class">Class</Link>
 </nav>
 
 <style>
@@ -18,14 +22,14 @@
     justify-content: space-between;
   }
 
-  a {
+  :global(a) {
     margin: 0 5%;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
   }
 
-  a:hover {
+  :global(a:hover) {
     text-decoration: underline;
   }
 </style>

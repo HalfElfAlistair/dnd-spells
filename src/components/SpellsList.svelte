@@ -4,7 +4,7 @@
   import { levelsQueryString } from "../store-files/querys";
 </script>
 
-<main>
+<section>
   {#await getSpells($levelsQueryString) then data}
     <ul>
       {#each data as spell}
@@ -12,10 +12,10 @@
       {/each}
     </ul>
   {/await}
-</main>
+</section>
 
 <style>
-  main {
+  section {
     margin: 5%;
     border: solid 2px #c92a2a;
   }
