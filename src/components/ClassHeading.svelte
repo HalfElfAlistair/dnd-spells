@@ -1,9 +1,13 @@
 <script>
-  // export let selectedClass = "class 1";
+  export let firstClassName = "";
   import { selectedClass } from "../store-files/classSelection";
 </script>
 
-<h2>{$selectedClass} Spells</h2>
+{#if $selectedClass.length < 1}
+  <h2>{firstClassName} Spells</h2>
+{:else}
+  <h2>{$selectedClass} Spells</h2>
+{/if}
 
 <style>
   h2 {
