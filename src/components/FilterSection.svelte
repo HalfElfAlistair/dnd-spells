@@ -11,13 +11,13 @@
 
   let checkedLevels = [];
 
-  const levelSubmit = () => {
+  const levelSubmit = (event) => {
     event.preventDefault();
     const checkedLevelsString = checkedLevels.join("&");
     levelsQueryString.set(checkedLevelsString);
   };
 
-  const checkedLevelsUpdate = () => {
+  const checkedLevelsUpdate = (event) => {
     if (event.target.checked) {
       checkedLevels = [...checkedLevels, event.target.value];
       return checkedLevels;
