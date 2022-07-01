@@ -1,15 +1,22 @@
 <script>
+  export let classList = [];
   import { selectedClass } from "../store-files/classSelection";
+  import { classQueryString } from "../store-files/querys";
+
+  classQueryString.set(classList[0].index);
+
   function classSelector(event) {
-    console.log(event.target.value);
-    selectedClass.set(event.target.value);
+    const selection = event.target.options[event.target.selectedIndex];
+    selectedClass.set(selection.text);
+    classQueryString.set(selection.value);
   }
 </script>
 
 <section>
   <select on:change={classSelector}>
-    <option value="class 1">class 1</option>
-    <option value="class 2">class 2</option>
+    {#each classList as dndClass}
+      <option value={dndClass.index}>{dndClass.name}</option>
+    {/each}
   </select>
 </section>
 
