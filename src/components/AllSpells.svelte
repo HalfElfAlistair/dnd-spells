@@ -5,5 +5,5 @@
 
 <main>
   <FilterSection />
-  <SpellsList />
+  <SpellsList spellsComponent="all" />
 </main>
