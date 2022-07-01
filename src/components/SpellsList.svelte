@@ -1,16 +1,28 @@
 <script>
   import SpellCard from "./SpellCard.svelte";
-  import { getSpells } from "../utils/api";
-  import { levelsQueryString } from "../store-files/querys";
+  import { getSpells, getSpellsByClass } from "../utils/api";
+  import { levelsQueryString, classQueryString } from "../store-files/querys";
+
+  export let spellsComponent;
+
+  const apiRequestFilter = (levelQuery, classQuery) => {
+    return spellsComponent === "all"
+      ? getSpells(levelQuery)
+      : getSpellsByClass(classQuery);
+  };
 </script>
 
 <section>
-  {#await getSpells($levelsQueryString) then data}
-    <ul>
-      {#each data as spell}
-        <SpellCard {spell} />
-      {/each}
-    </ul>
+  {#await apiRequestFilter($levelsQueryString, $classQueryString) then data}
+    {#if data.length < 1}
+      <p>Sorry, this class doesn't have any spells in the Players Handbook.</p>
+    {:else}
+      <ul>
+        {#each data as spell}
+          <SpellCard {spell} />
+        {/each}
+      </ul>
+    {/if}
   {/await}
 </section>
 
@@ -23,5 +35,8 @@
   ul {
     list-style: none;
     padding-left: 0;
+  }
+  p {
+    margin: 5%;
   }
 </style>
