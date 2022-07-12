@@ -1,15 +1,20 @@
 <script>
-  export let spell = { name: "Spell Name", level: "Level", class: "Class" };
+  import { Link } from "svelte-navigator";
+  import { spellPathString } from "../store-files/spellPath";
+
+  export let spell = { name: "", index: "", url: "" };
+
+  const pathPass = (event) => {
+    spellPathString.set(event.target.attributes.value.value);
+  };
 </script>
 
 <li>
-  <div class="spell-name-area">
-    <h2>{spell.name}</h2>
-  </div>
-  <!-- <div class="level-class-area">
-    <p>Level: {spell.level}</p>
-    <p>Class: {spell.class}</p>
-  </div> -->
+  <Link class="navlink" to="/spell">
+    <div class="spell-name-area" value={spell.url} on:click={pathPass}>
+      {spell.name}
+    </div>
+  </Link>
 </li>
 
 <style>
