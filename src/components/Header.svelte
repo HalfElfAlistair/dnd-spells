@@ -4,8 +4,14 @@
 
 <style>
   header {
-    margin: 5%;
-    border: solid 2px #364fc7;
+    padding: 5%;
+    background-color: #d04f45;
+    color: #f7f7f6;
+    width: 89%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
   }
 
   h1 {

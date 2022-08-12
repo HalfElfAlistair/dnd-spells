@@ -29,10 +29,7 @@
     margin: 5px;
   }
 
-  /* .level-class-area {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 25%;
-  } */
+  a {
+    color: black;
+  }
 </style>
