@@ -8,16 +8,14 @@
 </script>
 
 <Router>
+  <Header />
   <Route path="/">
-    <Header />
     <AllSpells />
   </Route>
   <Route path="/class">
-    <Header />
     <ClassSpells />
   </Route>
   <Route path="/spell">
-    <Header />
     <SpellPage />
   </Route>
   <Nav />
@@ -26,5 +24,6 @@
 <style>
   :global(body) {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f6;
   }
 </style>
