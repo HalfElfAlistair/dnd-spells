@@ -12,3 +12,11 @@
     <SpellsList spellsComponent="class" />
   {/await}
 </main>
+
+<style>
+  main {
+    margin-left: 0;
+    margin-top: 42%;
+    margin-bottom: 23%;
+  }
+</style>
