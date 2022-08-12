@@ -3,15 +3,14 @@
 </script>
 
 <nav>
-  <Link class="navlink" to="/">All Spells</Link>
-  <Link class="navlink" to="/class">Class</Link>
+  <Link class="navlink" to="/" style="color: #f7f7f6">All</Link>
+  <Link class="navlink" to="/class" style="color: #f7f7f6">Class</Link>
 </nav>
 
 <style>
   nav {
-    border: solid 2px #862e9c;
     padding: 5%;
-    background-color: white;
+    background-color: #d04f45;
     width: 89%;
     position: fixed;
     bottom: 0;
@@ -25,7 +24,7 @@
   :global(a) {
     margin: 0 5%;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
   }
 
